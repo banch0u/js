@@ -286,6 +286,22 @@ for (let i = 0; i < countryArray.length; i++) {
 for (let i = 0; i < typesOfArray.length; i++) {
   console.log(typesOfArray[i]);
 }
+/* didn't work must check again */
+for (let i = 0; i < typesOfArray.length; i++) {
+  if (typeof typesOfArray[i] !== 'string') continue;
+
+  console.log(typesOfArray[i]);
+}
+
+for (let i = 0; i < typesOfArray.length; i++) {
+  if (typesOfArray[i] === 'object') break;
+
+  console.log(typesOfArray[i]);
+}
+
+
+
+
 
 
 
