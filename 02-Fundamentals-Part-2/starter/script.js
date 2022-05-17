@@ -268,6 +268,27 @@ else if (mark.calcBMI() < john.calcBMI()) console.log(`John's BMI (${john.calcBM
 else console.log(`John's BMI (${john.calcBMI()}) is same as Mark's (${mark.calcBMI()})!`);
 
 
+const countryArray = [
+  "Azerbaijan",
+  "Baku",
+  "azerbaijani",
+  10_000_000,
+  ["Russia", "Georgia", "Armenia", "Turkey", "Iran"],
+]
+
+const typesOfArray = [];
+
+for (let i = 0; i < countryArray.length; i++) {
+  console.log(countryArray[i]);
+  typesOfArray[i] = typeof countryArray[i];
+}
+
+for (let i = 0; i < typesOfArray.length; i++) {
+  console.log(typesOfArray[i]);
+}
+
+
+
 
 
 
