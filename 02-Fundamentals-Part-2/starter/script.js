@@ -299,6 +299,11 @@ for (let i = 0; i < typesOfArray.length; i++) {
   console.log(typesOfArray[i]);
 }
 
+console.log("------------------------------");
+
+for (let i = countryArray.length - 1; i >= 0; i--) {
+  console.log(countryArray[i]);
+}
 
 
 
