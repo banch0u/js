@@ -305,6 +305,12 @@ for (let i = countryArray.length - 1; i >= 0; i--) {
   console.log(countryArray[i]);
 }
 
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+  console.log(`rollin ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+}
+
 
 
 
