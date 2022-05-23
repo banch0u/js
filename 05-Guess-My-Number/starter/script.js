@@ -87,4 +87,6 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").style.width = "15rem"
+  document.querySelector(".guess").value = "";
+
 });
