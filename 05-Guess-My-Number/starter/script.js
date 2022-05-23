@@ -33,6 +33,18 @@ let highscore = 0;
 //   }
 // }
 
+function checker(result) {
+  if (score > 1) {
+    document.querySelector(".message").textContent = `${result}`;
+    score--;
+    document.querySelector(".score").textContent = score;
+  } else {
+    document.querySelector(".message").textContent = "You lost try again";
+    document.querySelector("body").style.backgroundColor = "red";
+    document.querySelector(".score").textContent = 0;
+  }
+}
+
 document.querySelector('.check').addEventListener('click', function () {
   let guessNumber = Number(document.querySelector(".guess").value);
   if (guessNumber <= 0 || guessNumber > 20) {
@@ -52,30 +64,10 @@ document.querySelector('.check').addEventListener('click', function () {
 
   }
   else if (guessNumber > randomNumber) {
-    if (score > 1) {
-      document.querySelector(".message").textContent = "too high";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".message").textContent = "You lost try again";
-      document.querySelector("body").style.backgroundColor = "red";
-      document.querySelector(".score").textContent = 0;
-
-
-    }
+    checker("too high");
   }
   else if (guessNumber < randomNumber) {
-    if (score > 1) {
-      document.querySelector(".message").textContent = "too low";
-      score--;
-      document.querySelector(".score").textContent = score;
-    } else {
-      document.querySelector(".message").textContent = "You lost try again";
-      document.querySelector("body").style.backgroundColor = "red";
-      document.querySelector(".score").textContent = 0;
-
-
-    }
+    checker("too low");
   }
 
 });
