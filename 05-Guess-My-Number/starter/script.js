@@ -63,11 +63,8 @@ document.querySelector('.check').addEventListener('click', function () {
 
 
   }
-  else if (guessNumber > randomNumber) {
-    checker("too high");
-  }
-  else if (guessNumber < randomNumber) {
-    checker("too low");
+  else {
+    guessNumber > randomNumber ? checker("too high") : checker("too low");
   }
 
 });
