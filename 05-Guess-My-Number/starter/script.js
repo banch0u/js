@@ -51,15 +51,30 @@ document.querySelector('.check').addEventListener('click', function () {
 
   }
   else if (guessNumber > randomNumber) {
-    document.querySelector(".message").textContent = "too high";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 1) {
+      document.querySelector(".message").textContent = "too high";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost try again";
+      document.querySelector("body").style.backgroundColor = "red";
+      document.querySelector(".score").textContent = 0;
 
+
+    }
   }
   else if (guessNumber < randomNumber) {
-    document.querySelector(".message").textContent = "too low";
-    score--;
-    document.querySelector(".score").textContent = score;
+    if (score > 1) {
+      document.querySelector(".message").textContent = "too low";
+      score--;
+      document.querySelector(".score").textContent = score;
+    } else {
+      document.querySelector(".message").textContent = "You lost try again";
+      document.querySelector("body").style.backgroundColor = "red";
+      document.querySelector(".score").textContent = 0;
+
+
+    }
   }
 
 });
