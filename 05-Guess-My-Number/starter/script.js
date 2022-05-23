@@ -42,11 +42,10 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector(".message").textContent = "Correct";
     document.querySelector("body").style.backgroundColor = "Green";
     document.querySelector(".number").textContent = randomNumber;
-    document.querySelector(".highscore").textContent = score;
 
     if (score > highscore) {
-      highscore == score;
-      document.querySelector('highscore').textContent = highscore;
+      highscore = score;
+      document.querySelector('.highscore').textContent = highscore;
     }
 
 
@@ -63,4 +62,12 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector(".score").textContent = score;
   }
 
+});
+document.querySelector('.again').addEventListener('click', function () {
+
+  document.querySelector(".message").textContent = "Start guessing...";
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").textContent = "?";
+  score = 20;
+  document.querySelector(".score").textContent = score;
 });
