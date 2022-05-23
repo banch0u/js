@@ -34,11 +34,11 @@ let highscore = 0;
 // }
 
 document.querySelector('.check').addEventListener('click', function () {
-  let guessNumber = document.querySelector(".guess").value;
+  let guessNumber = Number(document.querySelector(".guess").value);
   if (guessNumber <= 0 || guessNumber > 20) {
     document.querySelector(".message").textContent = "Please select numbers between 1 to 20";
   }
-  else if (guessNumber == randomNumber) {
+  else if (guessNumber === randomNumber) {
     document.querySelector(".message").textContent = "Correct";
     document.querySelector("body").style.backgroundColor = "Green";
     document.querySelector(".number").textContent = randomNumber;
