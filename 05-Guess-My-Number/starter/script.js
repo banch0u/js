@@ -4,7 +4,7 @@ let score = 20;
 let highscore = 0;
 function checker(result) {
   if (score > 1) {
-    document.querySelector(".message").textContent = `${result}`;
+    document.querySelector(".message").textContent = result;
     score--;
     document.querySelector(".score").textContent = score;
   } else {
