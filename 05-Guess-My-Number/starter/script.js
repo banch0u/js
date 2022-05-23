@@ -86,4 +86,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector(".number").textContent = "?";
   score = 20;
   document.querySelector(".score").textContent = score;
+  document.querySelector(".number").style.width = "15rem"
 });
