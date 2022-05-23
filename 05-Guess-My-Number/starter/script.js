@@ -1,8 +1,8 @@
 'use strict';
 
-//const randomNumber = Math.floor(Math.random() * (20 - 1 + 1) + 1);
+let randomNumber = Math.floor(Math.random() * (20 - 1 + 1) + 1);
 //console.log(randomNumber);
-const randomNumber = 15;
+// const randomNumber = 15;
 let score = 20;
 let highscore = 0;
 
@@ -64,7 +64,7 @@ document.querySelector('.check').addEventListener('click', function () {
 
 });
 document.querySelector('.again').addEventListener('click', function () {
-
+  randomNumber = Math.floor(Math.random() * (20 - 1 + 1) + 1);
   document.querySelector(".message").textContent = "Start guessing...";
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").textContent = "?";
