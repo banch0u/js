@@ -1,38 +1,7 @@
 'use strict';
-
 let randomNumber = Math.floor(Math.random() * (20 - 1 + 1) + 1);
-//console.log(randomNumber);
-// const randomNumber = 15;
 let score = 20;
 let highscore = 0;
-
-// function check() {
-//   let guessNumber = document.querySelector(".guess").value;
-//   if (guessNumber <= 0 || guessNumber > 20) {
-//     document.querySelector(".message").textContent = "Please select numbers between 1 to 20";
-//   }
-//   else if (guessNumber == randomNumber) {
-//     document.querySelector(".message").textContent = "Correct";
-//     document.querySelector("body").style.backgroundColor = "Green";
-//     document.querySelector(".number").textContent = randomNumber;
-//     document.querySelector(".highscore").textContent = score;
-
-
-
-//   }
-//   else if (guessNumber > randomNumber) {
-//     document.querySelector(".message").textContent = "too high";
-//     score--;
-//     document.querySelector(".score").textContent = score;
-
-//   }
-//   else if (guessNumber < randomNumber) {
-//     document.querySelector(".message").textContent = "too low";
-//     score--;
-//     document.querySelector(".score").textContent = score;
-//   }
-// }
-
 function checker(result) {
   if (score > 1) {
     document.querySelector(".message").textContent = `${result}`;
@@ -44,7 +13,6 @@ function checker(result) {
     document.querySelector(".score").textContent = 0;
   }
 }
-
 document.querySelector('.check').addEventListener('click', function () {
   let guessNumber = Number(document.querySelector(".guess").value);
   if (guessNumber <= 0 || guessNumber > 20) {
@@ -55,18 +23,14 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector("body").style.backgroundColor = "Green";
     document.querySelector(".number").textContent = randomNumber;
     document.querySelector(".number").style.width = "100%";
-
     if (score > highscore) {
       highscore = score;
       document.querySelector('.highscore').textContent = highscore;
     }
-
-
   }
   else {
     guessNumber > randomNumber ? checker("too high") : checker("too low");
   }
-
 });
 document.querySelector('.again').addEventListener('click', function () {
   randomNumber = Math.floor(Math.random() * (20 - 1 + 1) + 1);
@@ -77,5 +41,4 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").style.width = "15rem"
   document.querySelector(".guess").value = "";
-
 });
