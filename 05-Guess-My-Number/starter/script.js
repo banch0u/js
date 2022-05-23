@@ -42,6 +42,7 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector(".message").textContent = "Correct";
     document.querySelector("body").style.backgroundColor = "Green";
     document.querySelector(".number").textContent = randomNumber;
+    document.querySelector(".number").style.width = "100%";
 
     if (score > highscore) {
       highscore = score;
