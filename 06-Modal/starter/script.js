@@ -8,6 +8,10 @@ const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const modal = document.querySelector('.modal');
 
+function closeModal() {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+}
 
 
 
@@ -17,12 +21,5 @@ for (let i = 0; i < btnOpenModal.length; i++) {
     overlay.classList.remove('hidden');
   });
 }
-overlay.addEventListener('click', function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-
-});
-btnCloseModal.addEventListener('click', function () {
-  modal.classList.add('hidden');
-  overlay.classList.add('hidden');
-});
+overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);
