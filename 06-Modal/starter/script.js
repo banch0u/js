@@ -7,20 +7,22 @@ const hidden = document.querySelectorAll('.hidden');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 
+
+function displayStyleController(state) {
+  for (let j = 0; j < hidden.length; j++) {
+    hidden[j].style.display = state;
+  }
+}
+
 for (let i = 0; i < btnOpenModal.length; i++) {
   btnOpenModal[i].addEventListener('click', function () {
-    for (let j = 0; j < hidden.length; j++) {
-      hidden[j].style.display = "block";
-    }
+    displayStyleController("block");
   });
 }
 overlay.addEventListener('click', function () {
-  for (let j = 0; j < hidden.length; j++) {
-    hidden[j].style.display = "none";
-  }
+  displayStyleController("none");
 });
 btnCloseModal.addEventListener('click', function () {
-  for (let j = 0; j < hidden.length; j++) {
-    hidden[j].style.display = "none";
-  }
+  displayStyleController("none");
+
 });
