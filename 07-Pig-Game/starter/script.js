@@ -5,6 +5,12 @@ console.log(randomDice);
 const dice = document.querySelector('img');
 const rollDice = document.querySelector('.btn--roll');
 const hold = document.querySelector('.btn--hold');
+let modal = document.querySelector('.modal');
+let overlay = document.querySelector('.overlay');
+
+let modalH1 = document.querySelector('.modal-h1');
+let modalP = document.querySelector('.modal-p');
+
 let playerZero = document.querySelector('.player--0');
 let playerZeroCurrentScore = 0;
 let playerZeroCurrentSelector = document.querySelector('#current--0');
@@ -35,12 +41,20 @@ rollDice.addEventListener('click', function () {
       playerOne.classList.add('player--active');
     }
     playerZeroCurrentSelector.textContent = playerZeroCurrentScore;
+    console.log(playerZeroScore);
+
 
     hold.addEventListener('click', function () {
       playerZeroScore += playerZeroCurrentScore;
       playerZeroScoreSelector.textContent = playerZeroScore;
       playerZeroCurrentScore = 0;
       playerZeroCurrentSelector.textContent = playerZeroCurrentScore;
+      if (playerZeroScore >= 100) {
+        modalH1.textContent = "Player 1 Wins";
+        modalP.textContent = `${playerZeroScore} to ${playerOneScore} points`;
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+      }
       playerZero.classList.remove('player--active');
       playerOne.classList.add('player--active');
     });
@@ -58,11 +72,19 @@ rollDice.addEventListener('click', function () {
     }
     playerOneCurrentSelector.textContent = playerOneCurrentScore;
 
+
+
     hold.addEventListener('click', function () {
       playerOneScore += playerOneCurrentScore;
       playerOneScoreSelector.textContent = playerOneScore;
       playerOneCurrentScore = 0;
       playerOneCurrentSelector.textContent = playerOneCurrentScore;
+      if (playerOneScore >= 100) {
+        modalH1.textContent = "Player 2 Wins";
+        modalP.textContent = `${playerOneScore} to ${playerZeroScore} points`;
+        modal.classList.remove('hidden');
+        overlay.classList.remove('hidden');
+      }
       playerOne.classList.remove('player--active');
       playerZero.classList.add('player--active');
     });
