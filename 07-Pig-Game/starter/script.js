@@ -5,9 +5,9 @@ console.log(randomDice);
 const dice = document.querySelector('img');
 const rollDice = document.querySelector('.btn--roll');
 const hold = document.querySelector('.btn--hold');
+const playAgain = document.querySelectorAll('.btn--new');
 let modal = document.querySelector('.modal');
 let overlay = document.querySelector('.overlay');
-
 let modalH1 = document.querySelector('.modal-h1');
 let modalP = document.querySelector('.modal-p');
 
@@ -22,9 +22,6 @@ let playerOneCurrentScore = 0;
 let playerOneCurrentSelector = document.querySelector('#current--1');
 let playerOneScore = 0;
 let playerOneScoreSelector = document.querySelector('#score--1');
-
-
-
 
 rollDice.addEventListener('click', function () {
 
@@ -91,4 +88,28 @@ rollDice.addEventListener('click', function () {
 
   }
 });
+
+for (let i = 0; i < playAgain.length; i++) {
+  playAgain[i].addEventListener('click', function () {
+    playerZeroCurrentScore = 0;
+    playerZeroScore = 0;
+    playerOneCurrentScore = 0;
+    playerOneScore = 0;
+
+    playerOneScoreSelector.textContent = 0;
+    playerZeroScoreSelector.textContent = 0;
+    playerZeroCurrentSelector.textContent = 0;
+    playerOneCurrentSelector.textContent = 0;
+
+    if (!modal.classList.contains('hidden') && !overlay.classList.contains('hidden')) {
+      modal.classList.add('hidden');
+      overlay.classList.add('hidden');
+    }
+
+
+
+  });
+
+}
+
 
